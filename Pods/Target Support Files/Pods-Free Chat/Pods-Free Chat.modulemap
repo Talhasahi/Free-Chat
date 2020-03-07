@@ -1,0 +1,6 @@
+framework module Pods_Free_Chat {
+  umbrella header "Pods-Free Chat-umbrella.h"
+
+  export *
+  module * { export * }
+}

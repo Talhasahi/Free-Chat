@@ -24,6 +24,9 @@
                                 <state key="normal" title="LogIn">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OGy-85-Pb2" kind="push" identifier="goToLogin" id="QDn-e1-cvw"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vG4-3a-acq">
                                 <rect key="frame" x="0.0" y="88" width="414" height="674"/>
@@ -60,12 +63,11 @@
                     <navigationItem key="navigationItem" title="Welcome" id="x0J-Pm-252"/>
                     <connections>
                         <segue destination="2To-wo-54c" kind="push" identifier="goToChat" id="Uj4-Ht-8s1"/>
-                        <segue destination="OGy-85-Pb2" kind="push" id="vcX-3y-Aah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="208"/>
+            <point key="canvasLocation" x="-455.07246376811599" y="-192.1875"/>
         </scene>
         <!--Register-->
         <scene sceneID="h2K-yJ-Xcx">
@@ -98,7 +100,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="iW8-5e-dPR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQr-nH-KD7">
                                                 <rect key="frame" x="50" y="282" width="319" height="50"/>
@@ -110,6 +112,9 @@
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="6Qa-hZ-lAf" eventType="touchUpInside" id="fTO-hi-hPt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -145,12 +150,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="SBg-7p-Y2U"/>
                     <connections>
+                        <outlet property="emailTextField" destination="gmd-wd-Ptj" id="hjs-BO-iQR"/>
+                        <outlet property="passwordTextField" destination="InG-pu-oWn" id="pmZ-t5-bph"/>
                         <segue destination="2To-wo-54c" kind="push" identifier="goToChat" id="JXE-GR-nnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftU-Fk-KF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2086.9565217391305" y="227.67857142857142"/>
+            <point key="canvasLocation" x="480" y="133"/>
         </scene>
         <!--Log In-->
         <scene sceneID="bI1-s6-pWt">
@@ -183,7 +190,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="2Pl-Pp-GCI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYX-lc-aIX">
                                                 <rect key="frame" x="45" y="210" width="324" height="50"/>
@@ -195,6 +202,9 @@
                                                 <state key="normal" title="Log In">
                                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logInPressed:" destination="OGy-85-Pb2" eventType="touchUpInside" id="12h-EN-4F6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -230,6 +240,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="Abg-Zp-oLO"/>
                     <connections>
+                        <outlet property="emailTextFeild" destination="MK7-qQ-ZdY" id="Ach-6r-w9G"/>
+                        <outlet property="passwordTextField" destination="CUt-7N-c38" id="Ddb-um-fRQ"/>
                         <segue destination="2To-wo-54c" kind="push" identifier="goToChat" id="Chk-h3-hhZ"/>
                     </connections>
                 </viewController>
@@ -276,15 +288,18 @@
                                             <constraint firstAttribute="height" constant="45" id="x9g-vH-PH0"/>
                                         </constraints>
                                         <state key="normal" title="Sent"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="2To-wo-54c" eventType="touchUpInside" id="bsS-h1-bnS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="9Ce-81-Ubi" firstAttribute="leading" secondItem="mvZ-e8-bTk" secondAttribute="trailing" constant="5" id="4XL-18-euy"/>
                                     <constraint firstAttribute="trailing" secondItem="9Ce-81-Ubi" secondAttribute="trailing" constant="10" id="98Q-Vm-qTz"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Ce-81-Ubi" secondAttribute="bottom" constant="10" id="IeQ-ik-v46"/>
+                                    <constraint firstItem="9Ce-81-Ubi" firstAttribute="top" secondItem="HLH-n4-8Oc" secondAttribute="top" constant="5" id="bhp-Gm-qXY"/>
+                                    <constraint firstItem="mvZ-e8-bTk" firstAttribute="top" secondItem="HLH-n4-8Oc" secondAttribute="top" constant="5" id="ijr-ze-mty"/>
                                     <constraint firstItem="mvZ-e8-bTk" firstAttribute="leading" secondItem="HLH-n4-8Oc" secondAttribute="leading" constant="30" id="jzK-rV-llb"/>
-                                    <constraint firstAttribute="bottom" secondItem="mvZ-e8-bTk" secondAttribute="bottom" constant="10" id="oo6-Jb-4sf"/>
                                     <constraint firstAttribute="height" constant="60" id="rsr-Ku-Qwh"/>
                                 </constraints>
                             </view>
@@ -307,13 +322,22 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="2To-wo-54c" eventType="touchUpInside" id="2wL-NE-oZu"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="hieght" destination="rsr-Ku-Qwh" id="EAi-ZU-c90"/>
+                        <outlet property="msgTextFeild" destination="mvZ-e8-bTk" id="JYb-Pi-p8Y"/>
+                        <outlet property="sendButtonTextFeild" destination="9Ce-81-Ubi" id="84h-b4-j1W"/>
+                        <outlet property="tavleView" destination="cf4-o3-hGK" id="j3K-tk-31J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aH-m3-dYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2211.594202898551" y="-568.52678571428567"/>
+            <point key="canvasLocation" x="2289.8550724637685" y="-192.1875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oVU-MY-3k7">
@@ -331,14 +355,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixn-WB-BqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="-76"/>
+            <point key="canvasLocation" x="-1217" y="-192"/>
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1280" height="949"/>
-        <image name="background1" width="1800" height="1192.5"/>
+        <image name="background" width="853.33331298828125" height="632.66668701171875"/>
+        <image name="background1" width="1200" height="795"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JXE-GR-nnX"/>
+        <segue reference="Uj4-Ht-8s1"/>
     </inferredMetricsTieBreakers>
 </document>
